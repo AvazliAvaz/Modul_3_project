@@ -11,7 +11,6 @@ let dataTypeFrom = "RUB";
 let dataTypeTo = "USD";
 let isclick = false;
 
-
 // Function that selects the currency to be converted
 function currencyChooseFrom(currency) {
   for (let li of liFrom) {
@@ -19,10 +18,8 @@ function currencyChooseFrom(currency) {
   }
   currency.classList.add("choose");
   dataTypeFrom = currency.getAttribute("data-currency-type");
-  
-
   fromInputConvert();
-  toInputConvert();
+  console.log(toInput.value + "to");
 }
 //Function that selects the currency to be converted
 function currencyChooseTo(currency) {
@@ -43,20 +40,20 @@ function fromInputConvert() {
   fetch(`${url}${dataTypeFrom}&symbols=${dataTypeTo}`)
     .then((res) => res.json())
     .then((data) => {
-      toInput.value = (fromInput.value * Object.values(data.rates)[0]).toFixed(
-        4
-      );
+      toInput.value = (fromInput.value * Object.values(data.rates)[0]).toFixed(4);
       pFrom.innerHTML = `1 ${dataTypeFrom} = ${Object.values(
         data.rates
       )[0].toFixed(4)} ${dataTypeTo}`;
-      pTo.innerHTML = `1 ${dataTypeTo} =${(
-        1 / Object.values(data.rates)[0]
-      ).toFixed(4)} ${dataTypeFrom}`;
+      pTo.innerHTML = `1 ${dataTypeTo} =${(1 / Object.values(data.rates)[0]).toFixed(4)} ${dataTypeFrom}`;
+      if (fromInput.value === "") toInput.value = "";     
     });
 }
 toInput.addEventListener("input", toInputConvert);
 //Function that converts the entered value
 function toInputConvert() {
+  if (fromInput.value === "") {
+    toInput.value = "";
+  }
   fetch(`${url}${dataTypeTo}&symbols=${dataTypeFrom}`)
     .then((res) => res.json())
     .then((data) => {
@@ -65,13 +62,3 @@ function toInputConvert() {
       );
     });
 }
-
-//Emptying the contents of input areas when the program starts
-  fromInput.addEventListener('click',()=>{
-    if (!isclick){
-    fromInput.value ="";
-    toInput.value = "";
-    isclick=true;
-    }
-    })
-
