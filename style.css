@@ -1,0 +1,153 @@
+/* Roboto font url */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Sans+Georgian:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* Body and container style*/
+* {
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+}
+/* Navigation Bar style */
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  background-color: rgba(245, 245, 246, 1);
+  height: 3.12rem;
+  width: 100%;
+  padding-left: 6.25rem;
+  padding-right: 6.3rem;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.nav-list {
+  padding: 0 4rem;
+  width: 100%;
+}
+
+.nav-list ul li a {
+  text-decoration: none;
+  color: rgba(149, 155, 164, 1);
+  padding-right: 0.75rem;
+}
+
+.nav-list ul li a:hover {
+  font-weight: 500;
+  color: black;
+}
+
+#search-btn {
+  background-color: white;
+  padding: 0.5em;
+  font-weight: 500;
+  border: none;
+  height: 2rem;
+}
+/* Header style */
+header {
+  padding-left: 15.8rem;
+  padding-top: 3rem;
+}
+/* Main section style */
+main {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15.8rem;
+}
+.from,
+.to {
+  width: 40%
+}
+
+.from-list ul li,
+.to-list ul li {
+  border: 1px solid #e5e5e5;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  width: 25%;
+  text-align: center;
+  
+}
+.from p,
+.to p 
+{
+  padding-top: 2rem;
+}
+.from-list ul,
+.to-list ul {
+  border: 1px solid #e5e5e5;
+ 
+}
+.choose{
+  color:rgba(255, 255, 255, 1);
+  background-color: #833ae0;
+}
+
+.from-list ul li ,
+.to-list ul li  {
+  text-decoration: none;
+  color: rgba(198, 198, 198, 1);
+  height: 2em;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  
+}
+.from-list ul li:hover,
+.to-list ul li:hover 
+ {
+    color: rgba(255, 255, 255, 1);
+    background-color: #833ae0;
+}
+
+.from-input-area,
+.to-input-area{
+  padding: 1rem;
+  border: 1px solid rgba(229, 229, 229, 1);
+}
+
+#from-input-number:focus,
+#to-input-number:focus{
+  outline: none;
+}
+
+#from-input-number,
+#to-input-number{
+  border-style: hidden;
+  width: 98%;
+  font-weight: 700;
+  font-size: 36px;
+}
+.from-input-area p,
+.to-input-area p{
+  color:rgba(198, 198, 198, 1);
+
+  font-size: 12px;
+}
+
+
+.from-to-header{
+  padding-bottom: 1rem;
+  font-size: 12px;
+  color: rgba(159, 159, 159, 1);
+  
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
